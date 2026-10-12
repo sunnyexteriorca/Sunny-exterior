@@ -1,2 +1,355 @@
 # Sunny-exterior
 Sunny exterior Calgary website
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sunny Exterior - Eavestrough and gutter installation in Calgary, Alberta. Contact us for a quote.">
+<title>Sunny Exterior | Calgary Gutters & Eavestroughs</title>
+
+<style>
+:root {
+  --navy: #14283d;
+  --yellow: #f6c747;
+  --cream: #faf9f5;
+  --gray: #687787;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--navy);
+  line-height: 1.6;
+}
+.container { width: 90%; max-width: 1120px; margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  z-index: 10;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  gap: 20px;
+}
+.logo { font-size: 21px; font-weight: 800; }
+.logo span { color: #b78b17; }
+nav a { text-decoration: none; color: var(--navy); font-weight: 600; }
+.links { display: flex; align-items: center; gap: 22px; }
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 8px;
+  background: var(--yellow);
+  color: var(--navy);
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+.hero { background: var(--cream); padding: 65px 0; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.eyebrow {
+  color: #8b6910;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+h1 { font-size: clamp(38px, 5vw, 65px); line-height: 1.1; margin: 18px 0; }
+h1 span { color: #b78b17; }
+p { color: var(--gray); }
+.hero img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+.btn-outline { background: white; border: 1px solid #ddd; }
+section { padding: 75px 0; }
+.section-title { text-align: center; max-width: 650px; margin: 0 auto 40px; }
+h2 { font-size: clamp(28px, 4vw, 42px); line-height: 1.2; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.card { border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; }
+.card img { width: 100%; height: 210px; object-fit: cover; }
+.card-content { padding: 22px; }
+.card h3 { margin-top: 0; }
+.dark { background: var(--navy); color: white; }
+.dark p { color: #d0dae4; }
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.feature { padding: 15px; }
+.icon { font-size: 30px; }
+.cta { background: var(--yellow); padding: 38px; border-radius: 18px; }
+.cta h2 { margin-top: 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 45px; }
+form { background: white; padding: 25px; border: 1px solid #e5e7eb; border-radius: 14px; }
+label { display: block; font-weight: bold; margin: 12px 0 5px; }
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5dce3;
+  border-radius: 7px;
+  font: inherit;
+}
+textarea { min-height: 100px; }
+form button { width: 100%; margin-top: 20px; font-size: 16px; }
+footer { background: #0e2032; color: white; padding: 30px 0; }
+footer p { color: #d0dae4; }
+.menu { display: none; background: none; border: 0; font-size: 25px; }
+
+@media(max-width: 750px) {
+  .hero-grid, .contact-grid { grid-template-columns: 1fr; }
+  .cards, .features { grid-template-columns: 1fr; }
+  .hero img { height: 290px; }
+  .menu { display: block; }
+  .links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .links.open { display: flex; }
+  section { padding: 55px 0; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">☀ SUNNY <span>EXTERIOR</span></a>
+    <button class="menu" id="menu" aria-label="Toggle menu">☰</button>
+    <div class="links" id="links">
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn">Get a Free Quote</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Calgary, Alberta</span>
+      <h1>Protect Your Home. <span>Perfect Your Exterior.</span></h1>
+      <p>Quality eavestrough and gutter installation to help protect your home from water damage while giving it a clean, modern finish.</p>
+      <div class="actions">
+        <a href="#contact" class="btn">Request a Free Quote ↗</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85" alt="Beautiful modern home exterior">
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Our Services</span>
+      <h2>Exterior Solutions That Work Beautifully</h2>
+      <p>Practical solutions for your roofline and drainage needs.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Residential exterior">
+        <div class="card-content">
+          <h3>Eavestrough Installation</h3>
+          <p>New gutter systems designed to help direct rainwater away from your roof and foundation.</p>
+          <a href="#contact">Request a quote →</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Modern home">
+        <div class="card-content">
+          <h3>Gutter Replacement</h3>
+          <p>Replace aging or damaged gutters with a fresh system suited to your property.</p>
+          <a href="#contact">Request a quote →</a>
+        </div>
+      </article>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80" alt="Finished home interior and exterior">
+        <div class="card-content">
+          <h3>Downspouts & Drainage</h3>
+          <p>Help move rainwater away from your property with suitable downspout placement.</p>
+          <a href="#contact">Request a quote →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="about">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Why Sunny Exterior</span>
+      <h2>Good Work. Clean Finishes. Better Protection.</h2>
+      <p>We make it easy for Calgary homeowners to discuss their exterior projects.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">🏠</div>
+        <h3>Made for Your Home</h3>
+        <p>Solutions tailored to your property's roofline and drainage requirements.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">🛠️</div>
+        <h3>Attention to Detail</h3>
+        <p>A clean, professional finish that complements your home's exterior.</p>
+      </div>
+      <div class="feature">
+        <div class="icon">☀️</div>
+        <h3>Simple Quoting</h3>
+        <p>Tell us what you need and discuss the next steps for your project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="container">
+    <div class="section-title">
+      <h2>Three Simple Steps</h2>
+      <p>Start your gutter project with confidence.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <h3>01. Tell Us Your Needs</h3>
+        <p>Share your location and the work you need done.</p>
+      </div>
+      <div class="feature">
+        <h3>02. Get a Quote</h3>
+        <p>Discuss the scope of work and suitable options.</p>
+      </div>
+      <div class="feature">
+        <h3>03. Plan Your Project</h3>
+        <p>Agree on the details and arrange the next steps.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container cta">
+    <h2>Ready to Improve Your Home's Exterior?</h2>
+    <p>Contact Sunny Exterior to discuss your eavestrough and gutter installation.</p>
+    <a href="#contact" class="btn">Get Your Free Quote ↗</a>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--cream)">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's Talk About Your Project.</h2>
+      <p>Tell us what your home needs. Send your enquiry to get the conversation started.</p>
+      <p><strong>📍 Service area</strong><br>Calgary, Alberta and surrounding areas. Confirm availability for your location.</p>
+      <p><strong>✉ Email</strong><br>Use the form to prepare your quote request.</p>
+    </div>
+
+    <form id="quoteForm">
+      <h2 style="font-size:25px">Request a Free Quote</h2>
+      <label for="name">Full Name *</label>
+      <input id="name" name="name" required placeholder="Your name">
+
+      <label for="phone">Phone Number *</label>
+      <input id="phone" name="phone" type="tel" required placeholder="Your phone number">
+
+      <label for="email">Email Address *</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+      <label for="service">Service Required *</label>
+      <select id="service" name="service" required>
+        <option value="">Select a service</option>
+        <option>Eavestrough installation</option>
+        <option>Gutter replacement</option>
+        <option>Downspouts and drainage</option>
+        <option>Other</option>
+      </select>
+
+      <label for="address">Calgary Area or Postal Code</label>
+      <input id="address" name="address" placeholder="Your area">
+
+      <label for="details">Project Details</label>
+      <textarea id="details" name="details" placeholder="Tell us about your project"></textarea>
+
+      <button class="btn" type="submit">Prepare My Quote Request ↗</button>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">☀ SUNNY <span>EXTERIOR</span></div>
+    <p>Eavestrough and gutter installation in Calgary, Alberta.</p>
+    <p>© <span id="year"></span> Sunny Exterior. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const menu = document.getElementById("menu");
+const links = document.getElementById("links");
+
+menu.addEventListener("click", () => {
+  links.classList.toggle("open");
+});
+
+links.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => links.classList.remove("open"));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("quoteForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  // CHANGE THIS to your real business email address.
+  const businessEmail = "YOUR_EMAIL@example.com";
+
+  if (businessEmail === "YOUR_EMAIL@example.com") {
+    document.getElementById("status").textContent =
+      "Please add your business email address in the website code first.";
+    return;
+  }
+
+  const data = new FormData(event.currentTarget);
+  const message = [
+    "Name: " + data.get("name"),
+    "Phone: " + data.get("phone"),
+    "Email: " + data.get("email"),
+    "Service: " + data.get("service"),
+    "Area: " + data.get("address"),
+    "Details: " + data.get("details")
+  ].join("\n");
+
+  const url = "mailto:" + businessEmail +
+    "?subject=" + encodeURIComponent("Sunny Exterior - Quote Request") +
+    "&body=" + encodeURIComponent(message);
+
+  window.location.href = url;
+  document.getElementById("status").textContent =
+    "Your email app should open with the quote request ready to send.";
+});
+</script>
+</body>
+</html>
