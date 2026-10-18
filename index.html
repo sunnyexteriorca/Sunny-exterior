@@ -105,6 +105,7 @@ textarea { min-height: 100px; }
 form button { width: 100%; margin-top: 20px; font-size: 16px; }
 footer { background: #0e2032; color: white; padding: 30px 0; }
 footer p { color: #d0dae4; }
+footer a { overflow-wrap: anywhere; }
 .menu { display: none; background: none; border: 0; font-size: 25px; }
 
 @media(max-width: 750px) {
@@ -153,9 +154,12 @@ footer p { color: #d0dae4; }
       <div class="actions">
         <a href="#contact" class="btn">Request a Free Quote ↗</a>
         <a href="#services" class="btn btn-outline">Our Services</a>
+        <a href="https://wa.me/14034029491?text=Hello%20Sunny%20Exterior%2C%20I%27d%20like%20a%20quote."
+           class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
       </div>
     </div>
-    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85" alt="Beautiful modern home exterior">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1100&q=85"
+         alt="Beautiful modern home exterior">
   </div>
 </section>
 
@@ -168,25 +172,30 @@ footer p { color: #d0dae4; }
     </div>
     <div class="cards">
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Residential exterior">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+             alt="Residential exterior">
         <div class="card-content">
           <h3>Eavestrough Installation</h3>
           <p>New gutter systems designed to help direct rainwater away from your roof and foundation.</p>
           <a href="#contact">Request a quote →</a>
         </div>
       </article>
+
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Modern home">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+             alt="Modern home">
         <div class="card-content">
           <h3>Gutter Replacement</h3>
           <p>Replace aging or damaged gutters with a fresh system suited to your property.</p>
           <a href="#contact">Request a quote →</a>
         </div>
       </article>
+
       <article class="card">
-        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80" alt="Finished home interior and exterior">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80"
+             alt="Home exterior">
         <div class="card-content">
-          <h3>Downspouts & Drainage</h3>
+          <h3>Downspouts &amp; Drainage</h3>
           <p>Help move rainwater away from your property with suitable downspout placement.</p>
           <a href="#contact">Request a quote →</a>
         </div>
@@ -259,12 +268,23 @@ footer p { color: #d0dae4; }
       <span class="eyebrow">Contact Us</span>
       <h2>Let's Talk About Your Project.</h2>
       <p>Tell us what your home needs. Send your enquiry to get the conversation started.</p>
-      <p><strong>📍 Service area</strong><br>Calgary, Alberta and surrounding areas. Confirm availability for your location.</p>
-      <p><strong>✉ Email</strong><br>Use the form to prepare your quote request.</p>
+
+      <p><strong>📍 Service area</strong><br>
+      Calgary, Alberta and surrounding areas. Confirm availability for your location.</p>
+
+      <p><strong>☎ Phone</strong><br>
+      <a href="tel:+14034029491">+1 (403) 402-9491</a></p>
+
+      <p><strong>✉ Email</strong><br>
+      <a href="mailto:Sunnyexteriorabltd@gmail.com">Sunnyexteriorabltd@gmail.com</a></p>
+
+      <p><strong>💬 WhatsApp</strong><br>
+      <a href="https://wa.me/14034029491" target="_blank" rel="noopener noreferrer">Message Sunny Exterior on WhatsApp</a></p>
     </div>
 
     <form id="quoteForm">
       <h2 style="font-size:25px">Request a Free Quote</h2>
+
       <label for="name">Full Name *</label>
       <input id="name" name="name" required placeholder="Your name">
 
@@ -300,6 +320,11 @@ footer p { color: #d0dae4; }
   <div class="container">
     <div class="logo">☀ SUNNY <span>EXTERIOR</span></div>
     <p>Eavestrough and gutter installation in Calgary, Alberta.</p>
+    <p>
+      Phone: <a href="tel:+14034029491" style="color:inherit">+1 (403) 402-9491</a> |
+      Email: <a href="mailto:Sunnyexteriorabltd@gmail.com" style="color:inherit">Sunnyexteriorabltd@gmail.com</a> |
+      <a href="https://wa.me/14034029491" target="_blank" rel="noopener noreferrer" style="color:inherit">WhatsApp us</a>
+    </p>
     <p>© <span id="year"></span> Sunny Exterior. All rights reserved.</p>
   </div>
 </footer>
@@ -321,16 +346,9 @@ document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("quoteForm").addEventListener("submit", event => {
   event.preventDefault();
 
-  // CHANGE THIS to your real business email address.
-  const businessEmail = "YOUR_EMAIL@example.com";
-
-  if (businessEmail === "YOUR_EMAIL@example.com") {
-    document.getElementById("status").textContent =
-      "Please add your business email address in the website code first.";
-    return;
-  }
-
+  const businessEmail = "Sunnyexteriorabltd@gmail.com";
   const data = new FormData(event.currentTarget);
+
   const message = [
     "Name: " + data.get("name"),
     "Phone: " + data.get("phone"),
@@ -344,9 +362,10 @@ document.getElementById("quoteForm").addEventListener("submit", event => {
     "?subject=" + encodeURIComponent("Sunny Exterior - Quote Request") +
     "&body=" + encodeURIComponent(message);
 
-  window.location.href = url;
   document.getElementById("status").textContent =
     "Your email app should open with the quote request ready to send.";
+
+  window.location.href = url;
 });
 </script>
 </body>
